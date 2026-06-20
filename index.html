@@ -3,80 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Costa Propertys</title>
+    <title>Costa Estate Stewardship</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-bg: #fafafa;
-            --header-bg: #ffffff;
-            --border-color: #dbdbdb;
-            --text-main: #262626;
-            --accent: #0095f6;
-        }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--primary-bg); margin: 0; }
-        header { background: var(--header-bg); border-bottom: 1px solid var(--border-color); padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
-        .logo { font-weight: bold; font-size: 1.5rem; }
-        .lang-selector { cursor: pointer; padding: 5px; border: 1px solid var(--border-color); border-radius: 4px; }
-        .container { max-width: 600px; margin: 20px auto; padding: 0 20px; }
-        .post { background: white; border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 20px; }
-        .post-header { padding: 15px; font-weight: bold; }
-        .post-img { width: 100%; height: 400px; background: #eee; display: flex; align-items: center; justify-content: center; }
-        .post-content { padding: 15px; }
-        button { background: var(--accent); color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; margin-top: 10px; width: 100%; }
+        body { font-family: 'Playfair Display', serif; margin: 0; background-color: #f9f7f2; color: #333; line-height: 1.6; }
+        header { padding: 25px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e0ddd5; background: #fff; }
+        .logo { font-size: 22px; font-weight: bold; letter-spacing: 2px; color: #2c3e50; }
+        
+        .hero { background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1600'); height: 60vh; background-size: cover; background-position: center; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        
+        .services-bar { padding: 60px 10%; background: #f2efe9; }
+        .service-box { margin-bottom: 30px; border-bottom: 1px solid #dcd9d2; padding-bottom: 20px; }
+        .lang-label { font-size: 0.8rem; color: #888; display: block; margin-bottom: 5px; }
+
+        .portfolio-section { padding: 60px 10%; background: #ffffff; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; }
+
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; padding: 15px 25px; border-radius: 50px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+
+        footer { background: #2c3e50; color: white; padding: 30px; text-align: center; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="logo">Costa Propertys</div>
-    <select class="lang-selector" onchange="changeLanguage(this.value)">
-        <option value="pt">PT</option>
-        <option value="en">EN</option>
-        <option value="fr">FR</option>
-    </select>
-</header>
+    <header>
+        <div class="logo">COSTA ESTATE STEWARDSHIP</div>
+        <div>PT | EN | FR</div>
+    </header>
 
-<div class="container">
-    <div class="post">
-        <div class="post-header" id="post-title">Apartamento de Luxo no Porto</div>
-        <div class="post-img">Imagem do Imóvel</div>
-        <div class="post-content">
-            <p id="post-desc">Espaçoso apartamento localizado no centro histórico do Porto.</p>
-            <button id="btn-contact">Contactar Agora</button>
+    <section class="hero">
+        <h1>Bespoke Property Management</h1>
+        <p>A sua casa no Norte de Portugal, mantida com perfeição.<br>
+           Your home in the North of Portugal, impeccably maintained.<br>
+           Votre résidence dans le Nord du Portugal, entretenue à la perfection.</p>
+    </section>
+
+    <div class="services-bar">
+        <div class="service-box">
+            <h3>PROACTIVE MAINTENANCE</h3>
+            <p><strong>PT:</strong> Inspeções, Reparações, Segurança<br>
+               <strong>EN:</strong> Inspections, Repairs, Security<br>
+               <strong>FR:</strong> Inspections, Réparations, Sécurité</p>
+        </div>
+        <div class="service-box">
+            <h3>LUXURY CONCIERGE</h3>
+            <p><strong>PT:</strong> Preparação de Chegadas, Logística<br>
+               <strong>EN:</strong> Arrival Prep, Curated Logistics<br>
+               <strong>FR:</strong> Préparation des arrivées, Logistique</p>
+        </div>
+        <div class="service-box">
+            <h3>SECURE STEWARDSHIP</h3>
+            <p><strong>PT:</strong> Relatórios, Pagamentos, Paz de Espírito<br>
+               <strong>EN:</strong> Reports, Bill Pay, Peace of Mind<br>
+               <strong>FR:</strong> Rapports, Paiements, Tranquillité d'esprit</p>
         </div>
     </div>
-</div>
 
-<script>
-    const translations = {
-        pt: {
-            title: "Apartamento de Luxo no Porto",
-            desc: "Espaçoso apartamento localizado no centro histórico do Porto.",
-            button: "Contactar Agora"
-        },
-        en: {
-            title: "Luxury Apartment in Porto",
-            desc: "Spacious apartment located in the historic center of Porto.",
-            button: "Contact Now"
-        },
-        fr: {
-            title: "Appartement de Luxe à Porto",
-            desc: "Appartement spacieux situé dans le centre historique de Porto.",
-            button: "Contacter Maintenant"
-        }
-    };
+    <section class="portfolio-section">
+        <h2 style="text-align: center;">TRUSTED ACROSS NORTHERN PORTUGAL</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd" alt="Villa"><p>Foz do Douro</p></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6" alt="Manor"><p>Braga</p></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1613977257363-707ba9348227" alt="Riverside"><p>Douro Valley</p></div>
+        </div>
+    </section>
 
-    function changeLanguage(lang) {
-        document.getElementById('post-title').innerText = translations[lang].title;
-        document.getElementById('post-desc').innerText = translations[lang].desc;
-        document.getElementById('btn-contact').innerText = translations[lang].button;
-        localStorage.setItem('userLang', lang);
-    }
-    
-    window.onload = () => {
-        const savedLang = localStorage.getItem('userLang') || 'pt';
-        document.querySelector('.lang-selector').value = savedLang;
-        changeLanguage(savedLang);
-    };
-</script>
+    <a href="https://wa.me/351919971247" class="whatsapp-float" target="_blank">Contact Us | Contactez-nous</a>
+
+    <footer>
+        <p>🧩 We support and accept! | Nós apoiamos e aceitamos! | Nous soutenons et acceptons!</p>
+        <p>+351 919 971 247 | © 2026 COSTA ESTATE STEWARDSHIP</p>
+    </footer>
+
 </body>
 </html>
