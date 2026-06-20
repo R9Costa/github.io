@@ -100,43 +100,32 @@
             font-family: 'Cormorant Garamond', serif;
         }
 
-        /* Secção de Serviços Dinâmicos */
-        .services-section {
-            padding: 100px 10%;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* NOVA Secção de Serviços (Lado a Lado - Estilo Imagem 2) */
+        .services-bar {
+            padding: 60px 10%;
+            background: #f2efe9;
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            flex-wrap: wrap; /* Para mobile */
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-            margin-top: 40px;
+        .service-box {
+            text-align: center;
+            width: 30%;
+            min-width: 280px;
         }
 
-        .service-card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 4px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-            border: 1px solid rgba(157, 132, 97, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-card h3 {
+        .service-box h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 22px;
+            font-size: 18px;
             color: var(--accent-gold);
             letter-spacing: 1px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             text-transform: uppercase;
         }
 
-        .service-card p {
+        .service-box p {
             font-size: 14px;
             color: var(--text-muted);
         }
@@ -240,6 +229,8 @@
             header { padding: 20px; flex-direction: column; gap: 15px; }
             .hero h1 { font-size: 2.2rem; }
             .cta-float { bottom: 20px; right: 20px; padding: 12px 24px; font-size: 11px; }
+            .services-bar { flex-direction: column; align-items: center; text-align: center; }
+            .service-box { width: 100%; margin-bottom: 20px; }
         }
     </style>
 </head>
@@ -261,46 +252,44 @@
         <div data-lang="fr" class="lang-content"><p>Votre résidence dans le Nord du Portugal, entretenue com une perfection absolue.</p></div>
     </section>
 
-    <main class="services-section">
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>
-                    <span data-lang="pt" class="lang-content active-content">Manutenção Proativa</span>
-                    <span data-lang="en" class="lang-content">Proactive Maintenance</span>
-                    <span data-lang="fr" class="lang-content">Maintenance Proactive</span>
-                </h3>
-                <p>
-                    <span data-lang="pt" class="lang-content active-content">Inspeções rigorosas, gestão de reparações, supervisão técnica e segurança contínua para proteger o seu património.</span>
-                    <span data-lang="en" class="lang-content">Rigorous inspections, repair management, technical supervision, and continuous security to safeguard your asset.</span>
-                    <span data-lang="fr" class="lang-content">Inspections rigoureuses, gestion des réparations, supervision technique et sécurité continue pour protéger votre patrimoine.</span>
-                </p>
-            </div>
-            <div class="service-card">
-                <h3>
-                    <span data-lang="pt" class="lang-content active-content">Concierge de Luxo</span>
-                    <span data-lang="en" class="lang-content">Luxury Concierge</span>
-                    <span data-lang="fr" class="lang-content">Conciergerie de Luxe</span>
-                </h3>
-                <p>
-                    <span data-lang="pt" class="lang-content active-content">Preparação impecável para a sua chegada, coordenação de logística privada e experiências personalizadas à sua medida.</span>
-                    <span data-lang="en" class="lang-content">Impeccable preparation for your arrival, private logistics coordination, and tailored lifestyle experiences.</span>
-                    <span data-lang="fr" class="lang-content">Préparation impeccable pour votre arrivée, coordination logistique privée et experiências personnalisées sur mesure.</span>
-                </p>
-            </div>
-            <div class="service-card">
-                <h3>
-                    <span data-lang="pt" class="lang-content active-content">Gestão de Confiança</span>
-                    <span data-lang="en" class="lang-content">Secure Stewardship</span>
-                    <span data-lang="fr" class="lang-content">Gestion de Confiance</span>
-                </h3>
-                <p>
-                    <span data-lang="pt" class="lang-content active-content">Relatórios detalhados, gestão administrativa e supervisão de pagamentos locais. A sua total paz de espírito à distância.</span>
-                    <span data-lang="en" class="lang-content">Detailed reporting, administrative oversight, and local bill payment management. Complete peace of mind from afar.</span>
-                    <span data-lang="fr" class="lang-content">Rapports détaillés, gestion administrative et gestion des paiements locaux. Votre totale tranquillité d'esprit à distance.</span>
-                </p>
-            </div>
+    <div class="services-bar">
+        <div class="service-box">
+            <h3>
+                <span data-lang="pt" class="lang-content active-content">Manutenção Proativa</span>
+                <span data-lang="en" class="lang-content">Proactive Maintenance</span>
+                <span data-lang="fr" class="lang-content">Maintenance Proactive</span>
+            </h3>
+            <p>
+                <span data-lang="pt" class="lang-content active-content">Inspeções, Reparações, Segurança</span>
+                <span data-lang="en" class="lang-content">Inspections, Repairs, Security</span>
+                <span data-lang="fr" class="lang-content">Inspections, Réparations, Sécurité</span>
+            </p>
         </div>
-    </main>
+        <div class="service-box">
+            <h3>
+                <span data-lang="pt" class="lang-content active-content">Concierge de Luxo</span>
+                <span data-lang="en" class="lang-content">Luxury Concierge</span>
+                <span data-lang="fr" class="lang-content">Conciergerie de Luxe</span>
+            </h3>
+            <p>
+                <span data-lang="pt" class="lang-content active-content">Preparação de Chegadas, Logística</span>
+                <span data-lang="en" class="lang-content">Arrival Prep, Curated Logistics</span>
+                <span data-lang="fr" class="lang-content">Préparation des Arrivées, Logistique</span>
+            </p>
+        </div>
+        <div class="service-box">
+            <h3>
+                <span data-lang="pt" class="lang-content active-content">Gestão de Confiança</span>
+                <span data-lang="en" class="lang-content">Secure Stewardship</span>
+                <span data-lang="fr" class="lang-content">Gestion de Confiance</span>
+            </h3>
+            <p>
+                <span data-lang="pt" class="lang-content active-content">Relatórios, Pagamentos, Paz de Espírito</span>
+                <span data-lang="en" class="lang-content">Reports, Bill Pay, Peace of Mind</span>
+                <span data-lang="fr" class="lang-content">Rapports, Paiements, Tranquillité</span>
+            </p>
+        </div>
+    </div>
 
     <section class="portfolio-section">
         <h2 class="portfolio-title">
