@@ -1,89 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-pt">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Costa Estate Stewardship | Bespoke Property Management</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <title>Costa Propertys</title>
     <style>
-        body { font-family: 'Playfair Display', serif; margin: 0; background-color: #f9f7f2; color: #333; line-height: 1.6; }
-        header { padding: 25px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e0ddd5; background: #fff; }
-        .logo { font-size: 22px; font-weight: bold; letter-spacing: 2px; color: #2c3e50; }
-        
-        .hero { background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1600'); height: 65vh; background-size: cover; background-position: center; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-        .hero h1 { font-size: 2.8rem; margin-bottom: 10px; }
-        
-        .services-bar { display: flex; justify-content: space-around; padding: 60px 10%; background: #f2efe9; }
-        .service-box { text-align: center; width: 300px; }
-
-        .portfolio-section { padding: 80px 10%; background: #ffffff; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin-top: 40px; }
-        .gallery-item img { width: 100%; height: 280px; object-fit: cover; border-radius: 2px; }
-
-        .testimonials { padding: 80px 10%; background: #f9f7f2; text-align: center; }
-        .testimonial-box { max-width: 320px; margin: 20px; display: inline-block; vertical-align: top; }
-        .avatar { width: 70px; height: 70px; border-radius: 50%; margin-bottom: 20px; overflow: hidden; }
-        .avatar img { width: 100%; height: 100%; object-fit: cover; filter: blur(5px); }
-
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; padding: 15px 25px; border-radius: 50px; font-family: sans-serif; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 1000; }
-
-        footer { background: #2c3e50; color: white; padding: 40px; text-align: center; }
-        .support-msg { margin-bottom: 20px; font-style: italic; }
-        .footer-info { font-size: 11px; letter-spacing: 1px; }
+        :root {
+            --primary-bg: #fafafa;
+            --header-bg: #ffffff;
+            --border-color: #dbdbdb;
+            --text-main: #262626;
+            --accent: #0095f6;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--primary-bg); margin: 0; }
+        header { background: var(--header-bg); border-bottom: 1px solid var(--border-color); padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .logo { font-weight: bold; font-size: 1.5rem; }
+        .lang-selector { cursor: pointer; padding: 5px; border: 1px solid var(--border-color); border-radius: 4px; }
+        .container { max-width: 600px; margin: 20px auto; padding: 0 20px; }
+        .post { background: white; border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 20px; }
+        .post-header { padding: 15px; font-weight: bold; }
+        .post-img { width: 100%; height: 400px; background: #eee; display: flex; align-items: center; justify-content: center; }
+        .post-content { padding: 15px; }
+        button { background: var(--accent); color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; margin-top: 10px; width: 100%; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">COSTA ESTATE STEWARDSHIP</div>
-        <nav>HOME | SERVICES | ABOUT | CONTACT</nav>
-    </header>
+<header>
+    <div class="logo">Costa Propertys</div>
+    <select class="lang-selector" onchange="changeLanguage(this.value)">
+        <option value="pt">PT</option>
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+    </select>
+</header>
 
-    <section class="hero">
-        <h1>Bespoke Property Management</h1>
-        <p>A sua casa no Norte de Portugal, mantida com perfeição. | Your home in the North of Portugal, impeccably maintained.</p>
-    </section>
-
-    <div class="services-bar">
-        <div class="service-box"><h3>MANUTENÇÃO PROATIVA | PROACTIVE MAINTENANCE</h3><p>Inspeções, Reparações, Segurança | Inspections, Repairs, Security</p></div>
-        <div class="service-box"><h3>CONCIERGE DE LUXO | LUXURY CONCIERGE</h3><p>Preparação de Chegadas, Logística | Arrival Prep, Curated Logistics</p></div>
-        <div class="service-box"><h3>GESTÃO DE CONFIANÇA | SECURE STEWARDSHIP</h3><p>Relatórios, Pagamentos, Paz de Espírito | Reports, Bill Pay, Peace of Mind</p></div>
+<div class="container">
+    <div class="post">
+        <div class="post-header" id="post-title">Apartamento de Luxo no Porto</div>
+        <div class="post-img">Imagem do Imóvel</div>
+        <div class="post-content">
+            <p id="post-desc">Espaçoso apartamento localizado no centro histórico do Porto.</p>
+            <button id="btn-contact">Contactar Agora</button>
+        </div>
     </div>
+</div>
 
-    <section class="portfolio-section">
-        <h2 style="text-align: center; font-weight: 400;">CONFIANÇA NO NORTE DE PORTUGAL | TRUSTED ACROSS NORTHERN PORTUGAL</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd" alt="Villa"><p>Vivenda Privada, Foz do Douro | Private Villa, Foz do Douro</p></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6" alt="Manor"><p>Solar Histórico, Braga | Historic Manor, Braga</p></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1613977257363-707ba9348227" alt="Riverside"><p>Residência Douro Valley | Riverside Residence, Douro Valley</p></div>
-        </div>
-    </section>
+<script>
+    const translations = {
+        pt: {
+            title: "Apartamento de Luxo no Porto",
+            desc: "Espaçoso apartamento localizado no centro histórico do Porto.",
+            button: "Contactar Agora"
+        },
+        en: {
+            title: "Luxury Apartment in Porto",
+            desc: "Spacious apartment located in the historic center of Porto.",
+            button: "Contact Now"
+        },
+        fr: {
+            title: "Appartement de Luxe à Porto",
+            desc: "Appartement spacieux situé dans le centre historique de Porto.",
+            button: "Contacter Maintenant"
+        }
+    };
 
-    <section class="testimonials">
-        <h2 style="font-weight: 400;">A EXPERIÊNCIA DE EXCELÊNCIA | THE EXPERIENCE OF EXCELLENCE</h2>
-        <div class="testimonial-box">
-            <div class="avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e" alt="Client"></div>
-            <p><em>"A Costa Estate Stewardship deu-nos a tranquilidade que nos faltava. | Costa Estate Stewardship provided the peace of mind we were missing."</em></p>
-            <p><strong>— Proprietário, Porto | Private Owner, Porto</strong></p>
-        </div>
-        <div class="testimonial-box">
-            <div class="avatar"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="Client"></div>
-            <p><em>"Atenção impecável aos detalhes. | Impeccable attention to detail."</em></p>
-            <p><strong>— Cliente Internacional, Douro | International Client, Douro</strong></p>
-        </div>
-    </section>
-
-    <a href="https://wa.me/351919971247" class="whatsapp-float" target="_blank">WhatsApp Us | Contacte-nos</a>
-
-    <footer>
-        <div class="support-msg">
-            <span style="font-size: 20px;">🧩</span> 
-            <span>We support and accept! | Nós apoiamos e aceitamos!</span>
-        </div>
-        <div class="footer-info">
-            CONTACT | +351 919 971 247 | NORTE DE PORTUGAL | © 2026 COSTA ESTATE STEWARDSHIP
-        </div>
-    </footer>
-
+    function changeLanguage(lang) {
+        document.getElementById('post-title').innerText = translations[lang].title;
+        document.getElementById('post-desc').innerText = translations[lang].desc;
+        document.getElementById('btn-contact').innerText = translations[lang].button;
+        localStorage.setItem('userLang', lang);
+    }
+    
+    window.onload = () => {
+        const savedLang = localStorage.getItem('userLang') || 'pt';
+        document.querySelector('.lang-selector').value = savedLang;
+        changeLanguage(savedLang);
+    };
+</script>
 </body>
 </html>
