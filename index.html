@@ -1,47 +1,358 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Costa Estate Stewardship</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costa Estate Stewardship | Bespoke Property Management</title>
+    <meta name="description" content="Bespoke property management and luxury concierge services in Northern Portugal. Absolute peace of mind for discerning owners.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
     <style>
-        body { font-family: 'Playfair Display', serif; margin: 0; background: #f9f7f2; color: #333; }
-        header { padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; background: #fff; }
-        .lang-nav button { background: none; border: none; cursor: pointer; font-weight: bold; padding: 5px; }
-        
-        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1600'); height: 60vh; background-size: cover; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; }
+        :root {
+            --bg-color: #fcfbfa;
+            --text-dark: #1c2321;
+            --text-muted: #5e6563;
+            --accent-gold: #9d8461;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header Minimalista */
+        header {
+            padding: 30px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(252, 251, 250, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(28, 35, 33, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--text-dark);
+            text-transform: uppercase;
+        }
+
+        .lang-nav button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            padding: 5px 8px;
+            transition: color 0.3s;
+        }
+
+        .lang-nav button:hover, .lang-nav button.active-lang {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section de Alto Impacto */
+        .hero {
+            position: relative;
+            height: 75vh;
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1600') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            max-width: 600px;
+            font-style: italic;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Secção de Serviços Dinâmicos */
+        .services-section {
+            padding: 100px 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            border: 1px solid rgba(157, 132, 97, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Galeria / Portefólio */
+        .portfolio-section {
+            background: var(--white);
+            padding: 100px 5%;
+        }
+
+        .portfolio-title {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.04);
+        }
+
+        .gallery-caption {
+            padding: 15px 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-style: italic;
+            color: var(--text-dark);
+        }
+
+        /* Sistema Ocultar/Mostrar Idiomas */
         .lang-content { display: none; }
-        .active { display: block; }
+        .active-content { display: block; }
+        .inline-content { display: none; }
+        .active-inline { display: inline; }
+
+        /* Botão de Contacto Exclusivo (Flutuante Elegante) */
+        .cta-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-decoration: none;
+            text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: background-color 0.3s, transform 0.3s;
+            z-index: 1000;
+        }
+
+        .cta-float:hover {
+            background-color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+
+        /* Rodapé de Prestígio */
+        footer {
+            background: var(--text-dark);
+            color: rgba(255,255,255,0.7);
+            padding: 60px 5px;
+            text-align: center;
+            font-size: 13px;
+            letter-spacing: 1px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .support-cause {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-style: italic;
+            color: var(--white);
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 20px; flex-direction: column; gap: 15px; }
+            .hero h1 { font-size: 2.2rem; }
+            .cta-float { bottom: 20px; right: 20px; padding: 12px 24px; font-size: 11px; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div style="font-weight: bold; font-size: 20px;">COSTA ESTATE STEWARDSHIP</div>
+        <div class="logo">Costa Estate Stewardship</div>
         <nav class="lang-nav">
-            <button onclick="showLang('pt')">PT</button> | 
-            <button onclick="showLang('en')">EN</button> | 
-            <button onclick="showLang('fr')">FR</button>
+            <button id="btn-pt" class="active-lang" onclick="changeLanguage('pt')">PT</button> | 
+            <button id="btn-en" onclick="changeLanguage('en')">EN</button> | 
+            <button id="btn-fr" onclick="changeLanguage('fr')">FR</button>
         </nav>
     </header>
 
     <section class="hero">
-        <h1 id="title">Bespoke Property Management</h1>
-        
-        <div id="pt" class="lang-content active">
-            <p>A sua casa no Norte de Portugal, mantida com perfeição.</p>
+        <h1>Bespoke Property Management</h1>
+        <div data-lang="pt" class="lang-content active-content"><p>A sua casa no Norte de Portugal, mantida com absoluta perfeição.</p></div>
+        <div data-lang="en" class="lang-content"><p>Your home in the North of Portugal, maintained to absolute perfection.</p></div>
+        <div data-lang="fr" class="lang-content"><p>Votre résidence dans le Nord du Portugal, entretenue com une perfection absolue.</p></div>
+    </section>
+
+    <main class="services-section">
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>
+                    <span data-lang="pt" class="lang-content active-content">Manutenção Proativa</span>
+                    <span data-lang="en" class="lang-content">Proactive Maintenance</span>
+                    <span data-lang="fr" class="lang-content">Maintenance Proactive</span>
+                </h3>
+                <p>
+                    <span data-lang="pt" class="lang-content active-content">Inspeções rigorosas, gestão de reparações, supervisão técnica e segurança contínua para proteger o seu património.</span>
+                    <span data-lang="en" class="lang-content">Rigorous inspections, repair management, technical supervision, and continuous security to safeguard your asset.</span>
+                    <span data-lang="fr" class="lang-content">Inspections rigoureuses, gestion des réparations, supervision technique et sécurité continue pour protéger votre patrimoine.</span>
+                </p>
+            </div>
+            <div class="service-card">
+                <h3>
+                    <span data-lang="pt" class="lang-content active-content">Concierge de Luxo</span>
+                    <span data-lang="en" class="lang-content">Luxury Concierge</span>
+                    <span data-lang="fr" class="lang-content">Conciergerie de Luxe</span>
+                </h3>
+                <p>
+                    <span data-lang="pt" class="lang-content active-content">Preparação impecável para a sua chegada, coordenação de logística privada e experiências personalizadas à sua medida.</span>
+                    <span data-lang="en" class="lang-content">Impeccable preparation for your arrival, private logistics coordination, and tailored lifestyle experiences.</span>
+                    <span data-lang="fr" class="lang-content">Préparation impeccable pour votre arrivée, coordination logistique privée et experiências personnalisées sur mesure.</span>
+                </p>
+            </div>
+            <div class="service-card">
+                <h3>
+                    <span data-lang="pt" class="lang-content active-content">Gestão de Confiança</span>
+                    <span data-lang="en" class="lang-content">Secure Stewardship</span>
+                    <span data-lang="fr" class="lang-content">Gestion de Confiance</span>
+                </h3>
+                <p>
+                    <span data-lang="pt" class="lang-content active-content">Relatórios detalhados, gestão administrativa e supervisão de pagamentos locais. A sua total paz de espírito à distância.</span>
+                    <span data-lang="en" class="lang-content">Detailed reporting, administrative oversight, and local bill payment management. Complete peace of mind from afar.</span>
+                    <span data-lang="fr" class="lang-content">Rapports détaillés, gestion administrative et gestion des paiements locaux. Votre totale tranquillité d'esprit à distance.</span>
+                </p>
+            </div>
         </div>
-        <div id="en" class="lang-content">
-            <p>Your home in the North of Portugal, impeccably maintained.</p>
-        </div>
-        <div id="fr" class="lang-content">
-            <p>Votre résidence dans le Nord du Portugal, entretenue à la perfection.</p>
+    </main>
+
+    <section class="portfolio-section">
+        <h2 class="portfolio-title">
+            <span data-lang="pt" class="lang-content active-content">Presença Exclusiva</span>
+            <span data-lang="en" class="lang-content">Exclusive Presence</span>
+            <span data-lang="fr" class="lang-content">Présence Exclusive</span>
+        </h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=800" alt="Luxury villa in Foz do Douro managed by Costa Estate Stewardship">
+                <div class="gallery-caption">Foz do Douro, Porto</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?q=80&w=800" alt="Historic manor house in Braga supervised by Costa Estate Stewardship">
+                <div class="gallery-caption">Braga</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=800" alt="Exclusive riverside property in Douro Valley curated by Costa Estate Stewardship">
+                <div class="gallery-caption">Douro Valley</div>
+            </div>
         </div>
     </section>
 
+    <a href="https://wa.me/351919971247" class="cta-float" target="_blank">
+        <span data-lang="pt" class="lang-content active-content">Contactar Consultor</span>
+        <span data-lang="en" class="lang-content">Contact Consultant</span>
+        <span data-lang="fr" class="lang-content">Contacter le Consultant</span>
+    </a>
+
+    <footer>
+        <div class="support-cause">
+            <span data-lang="pt" class="lang-content active-content">🧩 Nós apoiamos e aceitamos!</span>
+            <span data-lang="en" class="lang-content">🧩 We support and accept!</span>
+            <span data-lang="fr" class="lang-content">🧩 Nous soutenons et acceptons!</span>
+        </div>
+        <p>+351 919 971 247 &nbsp;|&nbsp; NORTHERN PORTUGAL &nbsp;|&nbsp; © 2026 COSTA ESTATE STEWARDSHIP</p>
+    </footer>
+
     <script>
-        function showLang(lang) {
-            document.querySelectorAll('.lang-content').forEach(div => div.classList.remove('active'));
-            document.getElementById(lang).classList.add('active');
+        function changeLanguage(lang) {
+            // Atualiza os botões de navegação
+            document.querySelectorAll('.lang-nav button').forEach(btn => btn.classList.remove('active-lang'));
+            document.getElementById(`btn-${lang}`).classList.add('active-lang');
+
+            // Atualiza todos os blocos de texto correspondentes
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                if (element.getAttribute('data-lang') === lang) {
+                    element.classList.add('active-content');
+                } else {
+                    element.classList.remove('active-content');
+                }
+            });
         }
     </script>
 </body>
