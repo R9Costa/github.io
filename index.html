@@ -100,14 +100,14 @@
             font-family: 'Cormorant Garamond', serif;
         }
 
-        /* NOVA Secção de Serviços (Lado a Lado - Estilo Imagem 2) */
+        /* Secção de Serviços (Lado a Lado) */
         .services-bar {
             padding: 60px 10%;
             background: #f2efe9;
             display: flex;
             justify-content: space-around;
             gap: 30px;
-            flex-wrap: wrap; /* Para mobile */
+            flex-wrap: wrap;
         }
 
         .service-box {
@@ -133,10 +133,10 @@
         /* Galeria / Portefólio */
         .portfolio-section {
             background: var(--white);
-            padding: 100px 5%;
+            padding: 100px 5% 60px 5%;
         }
 
-        .portfolio-title {
+        .portfolio-title, .reviews-title {
             text-align: center;
             font-family: 'Cormorant Garamond', serif;
             font-size: 2rem;
@@ -176,11 +176,55 @@
             color: var(--text-dark);
         }
 
+        /* SECÇÃO DE REVIEWS (Depoimentos de Excelência) */
+        .reviews-section {
+            background: #fdfcf7;
+            padding: 80px 10%;
+            text-align: center;
+            border-top: 1px solid rgba(157, 132, 97, 0.1);
+        }
+
+        .reviews-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 4px;
+            width: 45%;
+            min-width: 320px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.015);
+            border: 1px solid rgba(28, 35, 33, 0.03);
+            text-align: left;
+        }
+
+        .review-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .review-author {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+        }
+
         /* Sistema Ocultar/Mostrar Idiomas */
         .lang-content { display: none; }
         .active-content { display: block; }
-        .inline-content { display: none; }
-        .active-inline { display: inline; }
 
         /* Botão de Contacto Exclusivo (Flutuante Elegante) */
         .cta-float {
@@ -231,6 +275,7 @@
             .cta-float { bottom: 20px; right: 20px; padding: 12px 24px; font-size: 11px; }
             .services-bar { flex-direction: column; align-items: center; text-align: center; }
             .service-box { width: 100%; margin-bottom: 20px; }
+            .review-card { width: 100%; }
         }
     </style>
 </head>
@@ -249,7 +294,7 @@
         <h1>Bespoke Property Management</h1>
         <div data-lang="pt" class="lang-content active-content"><p>A sua casa no Norte de Portugal, mantida com absoluta perfeição.</p></div>
         <div data-lang="en" class="lang-content"><p>Your home in the North of Portugal, maintained to absolute perfection.</p></div>
-        <div data-lang="fr" class="lang-content"><p>Votre résidence dans le Nord du Portugal, entretenue com une perfection absolue.</p></div>
+        <div data-lang="fr" class="lang-content"><p>Votre résidence dans le Nord du Portugal, entretenue avec une perfection absolue.</p></div>
     </section>
 
     <div class="services-bar">
@@ -313,6 +358,36 @@
         </div>
     </section>
 
+    <section class="reviews-section">
+        <h2 class="reviews-title">
+            <span data-lang="pt" class="lang-content active-content">Testemunhos de Excelência</span>
+            <span data-lang="en" class="lang-content">The Experience of Excellence</span>
+            <span data-lang="fr" class="lang-content">L'Expérience de l'Excellence</span>
+        </h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-text">
+                    <span data-lang="pt" class="lang-content active-content">"Encontrar alguém de total confiança para gerir a nossa moradia enquanto estamos fora do país parecia impossível. A Costa Estate Stewardship superou todas as expectativas com uma atenção ao detalhe impecável."</span>
+                    <span data-lang="en" class="lang-content">"Finding someone entirely trustworthy to manage our estate while we are out of the country seemed impossible. Costa Estate Stewardship exceeded all expectations with impeccable attention to detail."</span>
+                    <span data-lang="fr" class="lang-content">"Trouver quelqu'un de totalement digne de confiance pour gérer notre domaine pendant que nous sommes à l'étranger semblait impossible. Costa Estate Stewardship a dépassé toutes nos attentes avec une attention impeccable aux détails."</span>
+                </div>
+                <div class="review-author">
+                    — Private Owner, Foz do Douro
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-text">
+                    <span data-lang="pt" class="lang-content active-content">"A tranquilidade que nos proporcionam não tem preço. Chegar a Portugal e encontrar tudo perfeitamente preparado, limpo e operacional transforma as nossas estadias numa experiência de puro descanso."</span>
+                    <span data-lang="en" class="lang-content">"The peace of mind they provide is priceless. Arriving in Portugal to find everything perfectly curated, clean, and fully operational transforms our stays into an experience of pure relaxation."</span>
+                    <span data-lang="fr" class="lang-content">"La tranquillité d'esprit qu'ils procurent est inestimable. Arriver au Portugal et trouver tout parfaitement préparé, propre et opérationnel transforme nos séjours en une expérience de pur repos."</span>
+                </div>
+                <div class="review-author">
+                    — International Investor, Douro Valley
+                </div>
+            </div>
+        </div>
+    </section>
+
     <a href="https://wa.me/351919971247" class="cta-float" target="_blank">
         <span data-lang="pt" class="lang-content active-content">Contactar Consultor</span>
         <span data-lang="en" class="lang-content">Contact Consultant</span>
@@ -330,11 +405,9 @@
 
     <script>
         function changeLanguage(lang) {
-            // Atualiza os botões de navegação
             document.querySelectorAll('.lang-nav button').forEach(btn => btn.classList.remove('active-lang'));
             document.getElementById(`btn-${lang}`).classList.add('active-lang');
 
-            // Atualiza todos os blocos de texto correspondentes
             document.querySelectorAll('[data-lang]').forEach(element => {
                 if (element.getAttribute('data-lang') === lang) {
                     element.classList.add('active-content');
